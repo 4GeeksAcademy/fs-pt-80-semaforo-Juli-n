@@ -1,26 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
 
-export default Home;
+function Home() {
+	const [color, setColor] = useState("red");
+  
+	// Clases dinámicas para agregar el efecto de destello al semáforo
+	const trafficLightClass = `traffic-light ${
+	  color === "red" ? "active-red" : color === "yellow" ? "active-yellow" : "active-green"
+	}`;
+  
+	return (
+	  <div className={trafficLightClass}>
+		<div
+		  className={`light red ${color === "red" ? "brillibrillimiaumiau" : ""}`}
+		  onClick={() => setColor("red")}
+		></div>
+		<div
+		  className={`light yellow ${color === "yellow" ? "brillibrillimiaumiau" : ""}`}
+		  onClick={() => setColor("yellow")}
+		></div>
+		<div
+		  className={`light green ${color === "green" ? "brillibrillimiaumiau" : ""}`}
+		  onClick={() => setColor("green")}
+		></div>
+	  </div>
+	);
+  }
+  
+  export default Home;
+

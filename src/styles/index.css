@@ -10,3 +10,50 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out; /* Transición para el destello */
+}
+
+
+.light {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 50%;
+  background-color: gray;
+  transition: background-color 0.3s;
+}
+
+
+.light.red.brillibrillimiaumiau{
+  background-color: red;
+  box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+}
+
+.light.yellow.brillibrillimiaumiau {
+  background-color: yellow;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.7);
+}
+
+.light.green.brillibrillimiaumiau {
+  background-color: green;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7);
+}
